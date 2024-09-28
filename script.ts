@@ -44,7 +44,7 @@ function allColor (){
 }
 
 function directionToRight(){
-    let direction = "to right";
+    direction = "to right";
     document.body.style.backgroundImage=`linear-gradient(${direction},${currentFirstColor},
     ${currentSecondColor})`;
     codetoCopy=`{background-image:linear-gradient(${direction},${currentFirstColor},
