@@ -19,5 +19,8 @@ This project is a web-based CSS linear gradient generator that allows users to e
 - CSS
 - JavaScript
 
+## Live Website Link:
+https://css-linear-gradient-generator-6601.vercel.app/ 
+
 ## My LinkedIn Account Link:
 https://www.linkedin.com/in/abdullah-shaikh-29699b302/
