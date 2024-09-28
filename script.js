@@ -16,6 +16,8 @@ function colorGenerator() {
 }
 let currentFirstColor = "#eef2f3";
 let currentSecondColor = "#8e9eab";
+let codetoCopy = `{background-image:linear-gradient(${direction},${currentFirstColor},
+    ${currentSecondColor})}`;
 function firstColor() {
     currentFirstColor = colorGenerator();
     if (button1) {
@@ -23,6 +25,8 @@ function firstColor() {
     }
     document.body.style.backgroundImage = `linear-gradient(${direction},${currentFirstColor},
     ${currentSecondColor})`;
+    codetoCopy = `{background-image:linear-gradient(${direction},${currentFirstColor},
+    ${currentSecondColor})}`;
 }
 function secondColor() {
     currentSecondColor = colorGenerator();
@@ -31,6 +35,8 @@ function secondColor() {
     }
     document.body.style.backgroundImage = `linear-gradient(${direction},${currentFirstColor},
     ${currentSecondColor})`;
+    codetoCopy = `{background-image:linear-gradient(${direction},${currentFirstColor},
+    ${currentSecondColor})}`;
 }
 function allColor() {
     firstColor();
@@ -40,22 +46,30 @@ function directionToRight() {
     let direction = "to right";
     document.body.style.backgroundImage = `linear-gradient(${direction},${currentFirstColor},
     ${currentSecondColor})`;
+    codetoCopy = `{background-image:linear-gradient(${direction},${currentFirstColor},
+    ${currentSecondColor})}`;
 }
 ;
 function directionToLeft() {
     direction = "to left";
     document.body.style.backgroundImage = `linear-gradient(${direction},${currentFirstColor},
     ${currentSecondColor})`;
+    codetoCopy = `{background-image:linear-gradient(${direction},${currentFirstColor},
+    ${currentSecondColor})}`;
 }
 function directionToTop() {
     direction = "to top";
     document.body.style.backgroundImage = `linear-gradient(${direction},${currentFirstColor},
     ${currentSecondColor})`;
+    codetoCopy = `{background-image:linear-gradient(${direction},${currentFirstColor},
+    ${currentSecondColor})}`;
 }
 function directionToBottom() {
     direction = "to bottom";
     document.body.style.backgroundImage = `linear-gradient(${direction},${currentFirstColor},
     ${currentSecondColor})`;
+    codetoCopy = `{background-image:linear-gradient(${direction},${currentFirstColor},
+    ${currentSecondColor})}`;
 }
 ;
 let fCb = button1?.addEventListener('click', firstColor);
@@ -69,3 +83,8 @@ let dButtontoTop = document.getElementById("button-totop");
 let toT = dButtontoTop?.addEventListener('click', directionToTop);
 let dButtontoBottom = document.getElementById("button-tobottom");
 let ToB = dButtontoBottom?.addEventListener('click', directionToBottom);
+let copyButton = document.getElementById("copy-button");
+copyButton?.addEventListener('click', () => {
+    navigator.clipboard.writeText(codetoCopy);
+    alert(`Your Code: ${codetoCopy} is copied✅`);
+});
